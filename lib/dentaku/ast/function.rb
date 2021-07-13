@@ -44,6 +44,7 @@ module Dentaku
       # An Exception will be raised if a value is passed that cannot be cast to a Number.
       def self.numeric(value)
         return value if value.is_a?(::Numeric)
+        return 0 if value.nil?
 
         if value.is_a?(::String)
           number = value[/\A-?\d*\.?\d+\z/]

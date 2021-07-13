@@ -39,5 +39,13 @@ describe 'Dentaku::AST::Function::Sum' do
       result = calculator.evaluate!('SUM(x)', x: [])
       expect(result).to eq(0)
     end
+
+    it 'treats nil as 0' do
+      result = Dentaku('SUM(x)', x: nil)
+      expect(result).to eq(0)
+
+      result = Dentaku('SUM(MIN(x))', x: [])
+      expect(result).to eq(0)
+    end
   end
 end

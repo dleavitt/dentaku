@@ -23,6 +23,11 @@ describe 'Dentaku::AST::Function::Min' do
     expect(result).to eq(1.5)
   end
 
+  # it 'returns 0 if an empty array is passed, like Excel' do
+  #   result = Dentaku('MIN(x)', x: [])
+  #   expect(result).to eq(0)
+  # end
+
   context 'checking errors' do
     let(:calculator) { Dentaku::Calculator.new }
 
